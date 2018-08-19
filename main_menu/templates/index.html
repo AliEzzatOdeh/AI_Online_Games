@@ -1,8 +1,165 @@
-<html>
-    <head>
-        <title>AI Online Games :)</title>     
-    </head>
-    <body>
-        <a href="{% url 'tic_tac_toe_game' %}">tic_tac_toe</a>
-    </body>
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>AI Online Games :)</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+  <style>
+    :root {
+      --jumbotron-padding-y: 3rem;
+    }
+
+    .background-image {
+      background: url("{% static 'img/milky_way.jpg' %}");
+    }
+
+    .jumbotron {
+      padding-top: var(--jumbotron-padding-y);
+      padding-bottom: var(--jumbotron-padding-y);
+      margin-bottom: 0;
+      background-color: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .jumbotron {
+        padding-top: calc(var(--jumbotron-padding-y) * 2);
+        padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+      }
+    }
+
+    .jumbotron p:last-child {
+      margin-bottom: 0;
+    }
+
+    .jumbotron-heading {
+      font-weight: 300;
+    }
+
+    .jumbotron .container {
+      max-width: 40rem;
+    }
+
+    footer {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    footer p {
+      margin-bottom: .25rem;
+    }
+
+    .box-shadow {
+      box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About "Ali Ezzat Odeh"</h4>
+            <p class="text-muted">I am a passionate developer that loves to learn new things and transfer what I learn to other.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://stackoverflow.com/story/aliezzatodeh" class="text-white">Follow me on StackOverflow</a>
+              </li>
+              <li>
+                <a href="https://github.com/AliEzzatOdeh" class="text-white">Check my repository on GitHub</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}">
+          <strong>AI Online Games</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <section class="jumbotron text-center navbar-dark">
+      <div class="container">
+        <h1 class="jumbotron-heading">AI Online Game</h1>
+        <p class="lead text-muted">Programming is interesting and AI is even more interesting, so here you can compete with AI computer agents ^_^</p>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light background-image img-fluid">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <a href="{% url 'tic_tac_toe_game' %}">
+                <img class="card-img-top" src="{% static 'img/tic_tac_toe.svg' %}" alt="Card image cap">
+              </a>
+              <div class="card-body">
+                <a href="{% url 'tic_tac_toe_game' %}">
+                  <p class="card-text">Tic Tac Toe</p>
+                </a>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">The player you'll face will not be beated, for you it is tieing or losing</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="navbar navbar-dark bg-dark box-shadow text-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>AI online games &copy;</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write(
+      '<script src= "https://code.jquery.com/jquery-3.3.1.slim.js"integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="crossorigin="anonymous"><\/script>'
+    )
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+</body>
+
 </html>
